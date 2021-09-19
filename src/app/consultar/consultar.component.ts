@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProcessosService } from './processos.service';
+import { ResponseProcessos } from './consultar.model';
 
 @Component({
   selector: 'app-consultar',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsultarComponent implements OnInit {
 
-  constructor() { }
+  responseProcessos: ResponseProcessos;
+
+  constructor(private processosService: ProcessosService) { }
 
   ngOnInit(): void {
+    this.processosService.getProcessos()
+      .subscribe(res => this.responseProcessos = res)
   }
 
 }

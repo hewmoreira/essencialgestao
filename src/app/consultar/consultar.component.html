@@ -1,1 +1,12 @@
-<p>consultar works!</p>
+<div class="mb-5 row center-block" *ngFor="let processo of responseProcessos.data">
+    <label style="font-weight: bold;" >Processo:&emsp;</label>
+    <label style="font-weight: normal;">{{processo.id}}/2021</label><br>
+
+    <label style="font-weight: bold;" >Autor:&emsp;</label>
+    <label style="font-weight: normal;">{{processo.first_name}} {{processo.last_name}}</label><br>
+
+    <label style="font-weight: bold;" >E-mail:&emsp;</label>
+    <label style="font-weight: normal;">{{processo.email}}</label>
+
+    <br><br>
+</div>

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NewuserComponent } from './newuser/newuser.component';
 import { LoginComponent } from './login/login.component';
 import { ConsultarComponent } from './consultar/consultar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ConsultarComponent } from './consultar/consultar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
