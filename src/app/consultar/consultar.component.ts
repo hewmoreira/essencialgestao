@@ -11,6 +11,20 @@ export class ConsultarComponent implements OnInit {
 
   responseProcessos: ResponseProcessos;
 
+  numero: any;
+  protocolo: any;
+  mostrarTodos: any;
+
+  pesquisar(){
+    this.protocolo = this.responseProcessos.data[this.numero];
+    this.mostrarTodos = false;
+  };
+
+  pesquisarTodos(){
+    this.mostrarTodos = true;
+    this.protocolo = false;
+  }
+
   constructor(private processosService: ProcessosService) { }
 
   ngOnInit(): void {

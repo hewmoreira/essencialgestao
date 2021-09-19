@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RequestCreate, ResponseCreate } from './users.model';
+import { UsersService } from './users.service';
 
 @Component({
   selector: 'app-newuser',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewuserComponent implements OnInit {
 
-  constructor() { }
+  request: RequestCreate = {
+    name: '',
+    job: ''
+  }
+
+  response: ResponseCreate;
+
+
+  constructor(private userService: UsersService) { }
 
   ngOnInit(): void {
+  }
+
+  save() {
+    this.userService.createUser(this.request).subscribe(res => {
+      this.response = res;
+    })
   }
 
 }

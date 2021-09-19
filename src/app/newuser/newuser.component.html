@@ -1,1 +1,30 @@
-<p>newuser works!</p>
+<div class="mb-5 row center-block">
+    <label style="font-weight: normal;" >
+        <input type="text" placeholder="Insira o Nome" [(ngModel)]="request.name">
+    </label>
+    <br>
+    <label style="font-weight: normal;" >
+        <input type="text" placeholder="Insira a Profissão" [(ngModel)]="request.job">
+    </label>
+    <br>
+    <button type="submit" (click)="save()" class="btn btn-primary">Salvar</button>
+</div>
+<br><br>
+
+<div *ngIf="response" class="alert alert-success" role="alert">
+    <label style="font-weight: normal;" >
+        ID: {{response.id}}
+    </label>
+    <br>
+    <label style="font-weight: normal;" >
+        Nome: {{response.name}}
+    </label>
+    <br>
+    <label style="font-weight: normal;" >
+        Profissão: {{response.job}}
+    </label>
+    <br>
+    <label style="font-weight: normal;" >
+        Criado em: {{response.createdAt}}
+    </label>
+</div>

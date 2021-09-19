@@ -1,12 +1,36 @@
-<div class="mb-5 row center-block" *ngFor="let processo of responseProcessos.data">
+<div class="input-group">
+    <input type="text" min="0" max="5" class="form-control" placeholder="Número de Protocolo (De 1 à 5)" [(ngModel)]="numero">
+    <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="pesquisar()">Pesquisar</button><br><br>
+    <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="pesquisarTodos()">Todos Disponíveis</button>
+</div>
+
+<br><br>
+
+<div *ngIf="protocolo" class="mb-5 row center-block">
     <label style="font-weight: bold;" >Protocolo:&emsp;</label>
-    <label style="font-weight: normal;">{{processo.id}}/2021</label><br>
+    <label style="font-weight: normal;">{{protocolo.id - 1}}/2021</label><br>
 
     <label style="font-weight: bold;" >Autor:&emsp;</label>
-    <label style="font-weight: normal;">{{processo.first_name}} {{processo.last_name}}</label><br>
+    <label style="font-weight: normal;">{{protocolo.first_name}} {{protocolo.last_name}}</label><br>
 
     <label style="font-weight: bold;" >E-mail:&emsp;</label>
-    <label style="font-weight: normal;">{{processo.email}}</label>
+    <label style="font-weight: normal;">{{protocolo.email}}</label>
 
     <br><br>
+</div>
+
+<div *ngIf="mostrarTodos && !protocolo" >
+    <div class="mb-5 row center-block" *ngFor="let processo of responseProcessos.data">
+        <label style="font-weight: bold;" >Protocolo:&emsp;</label>
+        <label style="font-weight: normal;">{{processo.id}}/2021</label><br>
+    
+        <label style="font-weight: bold;" >Autor:&emsp;</label>
+        <label style="font-weight: normal;">{{processo.first_name}} {{processo.last_name}}</label><br>
+    
+        <label style="font-weight: bold;" >E-mail:&emsp;</label>
+        <label style="font-weight: normal;">{{processo.email}}</label>
+    
+        <br><br>
+    </div>
+
 </div>
