@@ -28,7 +28,7 @@ login(){
   if (this.form.get('email').value == this.emailDB && this.form.get('senha').value == this.senhaDB) {
       this.mensagem = "Login feito com sucesso!";
   } else {
-    this.mensagem = "E-mail ou a senha incorreto!"; 
+    this.mensagem = "Usuário ou senha incorreto!"; 
   }
 }
 
